@@ -1,0 +1,27 @@
+body{
+    background-color: pink;
+}
+
+.reg{
+    text-align: center;
+}
+
+.mail{
+    font-size: 36px;
+}
+
+.pass{
+    font-size: 36px;
+}
+
+.name{
+    font-size: 36px;
+}
+
+.birth{
+    font-size: 36px;
+}
+
+.course{
+    font-size: 36px;
+}
