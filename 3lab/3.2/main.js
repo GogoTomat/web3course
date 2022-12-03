@@ -23,7 +23,7 @@ document.querySelector('#confirmPassword').onclick = () => {
         console.log(password);
 }
 
-// Выбор возраста
+// Выбор курса
 document.querySelector('#radio_1').oninput = () => {
     var age = document.querySelector('#radio_1').value;
 
@@ -31,9 +31,9 @@ document.querySelector('#radio_1').oninput = () => {
 }
 
 
-document.querySelector('#teleInput').oninput = () => {
-    var telValue = document.querySelector("#teleInput").value;
-    document.querySelector('span').innerHTML = telValue;
+document.querySelector('#ageInput').oninput = () => {
+    var ageValue = document.querySelector("#ageInput").value;
+    document.querySelector('span').innerHTML = ageValue;
 }
 
 // Чекбокс
