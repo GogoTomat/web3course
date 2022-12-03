@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatable" content="ie-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/main.css">
+        <title>Registration</title>
+    </head>
+
+    <body>
+        <div class="registration">
+
+            <form name="registrateuser" method="POST">
+                <h1>Регистрация</h1>
+
+
+                <br>
+
+                <div><strong>Придумайте логин</strong></div>
+                <input
+                    class="lineInput"
+                    type="text"
+                    name="username"
+                    id = "createLogin"
+                    required
+                    placeholder="на английском">
+                    <button id="confirmLogin">подтвердить</button>
+                <br>
+
+                <div><strong>Придумайте пароль</strong></div>
+                <input
+                    class="lineInput"
+                    type="password"
+                    name="name"
+                    id="createPassword"
+                    required
+                    placeholder="на английском">
+                <button id="confirmPassword">подтвердить</button>
+                <br>
+
+
+                <div><strong>Укажите ваш возраст</strong></div>
+                <div id="nukaradio">
+                    <input
+                        type="radio"
+                        id="radio_1"
+                        value="1"
+                        name="gender"
+                        required>
+                    <label for="radio_1">12-</label><br>
+                    <input type="radio" id="radio_2" value="2" name="gender">
+                    <label for="radio_2">12+</label><br>
+                    <input type="radio" id="radio_3" value="3" name="gender">
+                    <label for="radio_3">18+</label><br>
+                    <input type="radio"  id="radio_4" value="2" name="gender">
+                    <label for="radio_4">+-43</label>
+                </div>
+                <br>
+
+                <div><strong>Номер телефона</strong></div>
+                <input
+                    class="lineInput"
+                    type="range"
+                    min = 70000000000
+                    max = 89999999999
+                    name="tel"
+                    required
+                    value="899999999999"
+                    id="teleInput">
+                    <span></span>
+                <br>
+
+                <div><strong>Введите вашу почту</strong></div>
+                <input class="lineInput" type="email" name="email" required>
+                <br>
+
+                <div>
+                    <input type="checkbox" id="lastCheck" required>
+                    <label for="lastCheck">
+                        Я согласен(на) на обработку
+                        персональных данных</label>
+                </div>
+
+                <br>
+                <button id="submitButton">Отправить</button>
+            </form>
+        </div>
+
+        <br>
+
+        <script src="main.js"></script>
+    </body>
+    </html>
+    
