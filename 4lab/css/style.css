@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap");
+
+body{
+    color: aliceblue;
+    background-color: dimgrey;
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+.count{
+    background-color: dimgrey;
+    color: red;
+    font-family: 'Montserrat', 'sans-serif';
+}
+
+.mail{
+    background-color: dimgrey;
+    color: aliceblue;
+    font-family: 'Montserrat', 'sans-serif';
+
+}
