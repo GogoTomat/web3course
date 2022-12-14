@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="registrateuser" method="POST">
+    <h1>Регистрация</h1>
+    <div><strong>Придумайте логин</strong></div>
+    <input
+            class="lineInput"
+            type="text"
+            name="username"
+            id = "createLogin"
+            required
+            placeholder="на английском">
+    <button id="confirmLogin">подтвердить</button>
+    <br>
+<script>
+    function ready() {
+        alert('DOM готов');
+
+        // изображение ещё не загружено (если не было закешировано), так что размер будет 0x0
+        alert(`Размер изображения: ${img.offsetWidth}x${img.offsetHeight}`);
+    }
+
+    document.addEventListener("DOMContentLoaded", ready);
+</script>
+
+<script>
+    window.onload = function() { // можно также использовать window.addEventListener('load', (event) => {
+        alert('Страница загружена');
+
+        // к этому моменту картинка загружена
+        alert(`Image size: ${img.offsetWidth}x${img.offsetHeight}`);
+    };
+</script>
+
+<script>
+    window.onbeforeunload = function (evt) {
+        var message = "Login isn't saved";
+        if (typeof evt == "undefined") {
+            evt = window.event;
+        }
+        if (evt) {
+            evt.returnValue = message;
+        }
+        return message;
+    }
+</script>
+
+
+<img id="img" src="https://en.js.cx/clipart/train.gif?speed=1&cache=0">
+</body>
+</html>

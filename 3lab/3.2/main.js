@@ -1,13 +1,9 @@
-"use strict";
-
-
-
 // Создание логина
 document.querySelector('#confirmLogin').onclick = () => {
     var login = document.querySelector("#createLogin").value;
     const regexp = /\W/
     if(login.match(regexp))
-        alert('Логин должен содержать только буквы и цифры, а также _')
+        alert('Логин должен содержать только буквы и цифры')
     else
         console.log(login);
 }
@@ -25,12 +21,12 @@ document.querySelector('#confirmPassword').onclick = () => {
 
 // Выбор курса
 document.querySelector('#radio_1').oninput = () => {
-    var age = document.querySelector('#radio_1').value;
+    var course = document.querySelector('#radio_1').value;
 
-    console.log(age);
+    console.log(course);
 }
 
-
+// Выбор возрастаъи
 document.querySelector('#ageInput').oninput = () => {
     var ageValue = document.querySelector("#ageInput").value;
     document.querySelector('span').innerHTML = ageValue;
