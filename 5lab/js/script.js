@@ -1,50 +1,37 @@
-const tasksListElement = document.querySelector(`.tasks__list`);
-const taskElements = tasksListElement.querySelectorAll(`.tasks__item`);
+ball.onmousedown = function(event) { // (1) отследить нажатие
 
-for (const task of taskElements) {
-    task.draggable = true;
-}
+    // (2) подготовить к перемещению:
+    // разместить поверх остального содержимого и в абсолютных координатах
+    ball.style.position = 'absolute';
+    ball.style.zIndex = 1000;
+    // переместим в body, чтобы мяч был точно не внутри position:relative
+    document.body.append(ball);
+    // и установим абсолютно спозиционированный мяч под курсор
 
-tasksListElement.addEventListener(`dragstart`, (evt) => {
-    evt.target.classList.add(`selected`);
-});
+    moveAt(event.pageX, event.pageY);
 
-tasksListElement.addEventListener(`dragend`, (evt) => {
-    evt.target.classList.remove(`selected`);
-});
+    // передвинуть мяч под координаты курсора
+    // и сдвинуть на половину ширины/высоты для центрирования
+    function moveAt(pageX, pageY) {
+        ball.style.left = pageX - ball.offsetWidth / 2 + 'px';
+        ball.style.top = pageY - ball.offsetHeight / 2 + 'px';
+    }
 
-const getNextElement = (cursorPosition, currentElement) => {
-    const currentElementCoord = currentElement.getBoundingClientRect();
-    const currentElementCenter = currentElementCoord.y + currentElementCoord.height / 2;
+    function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+    }
 
-    const nextElement = (cursorPosition < currentElementCenter) ?
-        currentElement :
-        currentElement.nextElementSibling;
+    // (3) перемещать по экрану
+    document.addEventListener('mousemove', onMouseMove);
 
-    return nextElement;
+    // (4) положить мяч, удалить более ненужные обработчики событий
+    ball.onmouseup = function() {
+        document.removeEventListener('mousemove', onMouseMove);
+        ball.onmouseup = null;
+    };
+
+    ball.ondragstart = function() {
+        return false;
+    };
+
 };
-
-tasksListElement.addEventListener(`dragover`, (evt) => {
-    evt.preventDefault();
-
-    const activeElement = tasksListElement.querySelector(`.selected`);
-    const currentElement = evt.target;
-    const isMoveable = activeElement !== currentElement &&
-        currentElement.classList.contains(`tasks__item`);
-
-    if (!isMoveable) {
-        return;
-    }
-
-    const nextElement = getNextElement(evt.clientY, currentElement);
-
-    if (
-        nextElement &&
-        activeElement === nextElement.previousElementSibling ||
-        activeElement === nextElement
-    ) {
-        return;
-    }
-
-    tasksListElement.insertBefore(activeElement, nextElement);
-});
