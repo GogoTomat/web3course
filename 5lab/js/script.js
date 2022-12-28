@@ -1,6 +1,6 @@
-ball.onmousedown = function(event) { // (1) отследить нажатие
+ball.onmousedown = function(event) { // отследить нажатие
 
-    // (2) подготовить к перемещению:
+    // подготовить к перемещению:
     // разместить поверх остального содержимого и в абсолютных координатах
     ball.style.position = 'absolute';
     ball.style.zIndex = 1000;
@@ -13,18 +13,22 @@ ball.onmousedown = function(event) { // (1) отследить нажатие
     // передвинуть мяч под координаты курсора
     // и сдвинуть на половину ширины/высоты для центрирования
     function moveAt(pageX, pageY) {
-        ball.style.left = pageX - ball.offsetWidth / 2 + 'px';
-        ball.style.top = pageY - ball.offsetHeight / 2 + 'px';
+                ball.style.left = pageX - ball.offsetWidth / 2 + 'px';
+                ball.style.top = pageY - ball.offsetHeight / 2 + 'px';
     }
 
     function onMouseMove(event) {
-        moveAt(event.pageX, event.pageY);
+
+            moveAt(event.pageX, event.pageY);
+
     }
 
-    // (3) перемещать по экрану
-    document.addEventListener('mousemove', onMouseMove);
+    // (перемещать по экрану
+    if (ball.position.top > 0) {
+        document.addEventListener('mousemove', onMouseMove);
+    }
 
-    // (4) положить мяч, удалить более ненужные обработчики событий
+    // положить мяч, удалить более ненужные обработчики событий
     ball.onmouseup = function() {
         document.removeEventListener('mousemove', onMouseMove);
         ball.onmouseup = null;

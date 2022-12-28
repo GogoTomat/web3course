@@ -1,20 +1,78 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap");
-
-body{
-    color: aliceblue;
-    background-color: dimgrey;
-    font-family: 'Montserrat', 'sans-serif';
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: normal;
+    font-weight: 400;
 }
 
-.count{
-    background-color: dimgrey;
+.hero {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.wrapper {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 100px 0;
+}
+
+.list__cell {
+    flex-basis: calc(25% - 40px);
+    min-height: 150px;
+    margin: 20px;
+    list-style: none;
+    box-shadow: 0px 0px 7px 5px rgba(0,0,0,0.2);
+    overflow: hidden;
+    background-color:whitesmoke;
+}
+
+.list__caption {
+    width: calc(25% - 40px);
+    margin: 0 20px;
+    list-style: none;
+    font-weight: bold;
     color: red;
-    font-family: 'Montserrat', 'sans-serif';
 }
 
-.mail{
-    background-color: dimgrey;
-    color: aliceblue;
-    font-family: 'Montserrat', 'sans-serif';
+.list__card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    min-height: 100%;
+    cursor: all-scroll;
+}
 
+.list__card-header {
+    text-transform: lowercase;
+    font-weight: bold;
+    padding: 12px 20px;
+    background-color: red;
+    color: whitesmoke;
+}
+
+.list__card-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+    flex-grow: 1;
+    padding: 12px 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.hovered {
+    background-color: gray;
+}
+
+.hide {
+    display: none;
 }

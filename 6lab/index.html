@@ -38,19 +38,12 @@
 </script>
 
 <script>
-    window.onbeforeunload = function (evt) {
-        var message = "Login isn't saved";
-        if (typeof evt == "undefined") {
-            evt = window.event;
-        }
-        if (evt) {
-            evt.returnValue = message;
-        }
-        return message;
-    }
+    window.addEventListener('beforeunload', (event) => {
+        event.returnValue = `Are you sure you want to leave?`;
+    });
 </script>
 
 
-<img id="img" src="https://en.js.cx/clipart/train.gif?speed=1&cache=0">
+<img id="img" src="https://en.js.cx/clipart/ball.svg?speed=1">
 </body>
 </html>
